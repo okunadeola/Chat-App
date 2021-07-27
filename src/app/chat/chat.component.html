@@ -1,0 +1,98 @@
+<div class="container__fluid">
+  <div class="chat__nav text-light relative">
+    <div class="row nav__height">
+      <div class="col-2 mx-4 my-2 responsive">
+        <div class="row">
+          <div class="col-5 mx-0">
+            <i class="fa fa-user-circle "></i>   
+          </div>
+          <div class="col-7 mx-0 my-1">
+            @{{username}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1 mx-2 my-2">
+        <div class="row">
+          <div class="col-7">
+            <i class="fa fa-stream my-2 " (click)="toggleUserList()"></i>   
+          </div>
+          <div class="col-2 one">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4 my-2 receiverAvarte" *ngIf="receiverName">
+        <div class="row">
+          <div class="col-1 mx-3">
+            <i class="fa fa-user-circle "></i>   
+          </div>
+          <div class="col-7 my-1">
+            @{{receiverName}}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1 my-2 logout" (click)="logout()">
+        <div class="row">
+          <div class="col">
+            <i class="fa fa-arrow-left logIcon">Logout</i>   
+            <i title="logout" class="fa fa-arrow-left logIconTwo"></i>   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat__container">
+
+    <div class="user__list" [id]="id ? 'react' : 'noReact' ">
+      <div class="min__device">
+        <i class="fa fa-user-circle my-2"></i>
+        <div class="py-3">Welcome {{username}}</div>
+        <div class="input-group my-1 mx-2"> 
+          <input placeholder="search chat user"(keyup)="searchChatName()" [(ngModel)]="chatName" type="text" class="form-control">
+          <!-- <button (click)="searchChat()" class="btn btn-primary" type="button"><i class="fa fa-search"></i></button> -->
+        </div>
+      </div>
+      <input placeholder="search chat user"(keyup)="searchChatName()" [(ngModel)]="chatName" type="text" class="form-control display">
+      <!-- <a class="hover"> -->
+        <div class="text-dark my-1 py-2 user" (click)="userData(user.username)" *ngFor="let user of allUser; let i=index">
+          <div class="row">
+            <div class="col-2">
+              <i class="fa fa-user-circle"></i>
+            </div>
+            <div class="col-5">
+              {{user.username}}
+            </div>
+          </div>
+        </div>
+      <!-- </a> -->
+    </div>
+
+    <div class="chat__view">
+
+      <div class="flex">
+        <div  *ngFor="let message of allChatFront; let i=index " >
+          <div class="p-2 my-3 max"  [style]="message.name === username? {color:'#fff', background: '#6b58a5',float: 'right', marginRight:'15px', borderRadius: '15px 10px 2px 15px'  } : {color:'#222', background: '#fff', float:'left', borderRadius: '10px 15px 15px 2px', marginLeft:'15px'} ">
+            {{message.message}}
+            <div [style]= "message.name === username? {float: 'right', marginTop:'10px', color:'#ddd', marginLeft: '10px'}: {float: 'right', marginTop:'10px', color:'#aaa', marginLeft:'10px'}">
+              <small class="text-sm time">{{(message.time | timeago).includes('second') ? 'Just now' : message.time | timeago}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="row w-100 position mx-2 my-1" >
+          <div class="col-7 ">
+            <input  (keyup.enter)="sendMessage()"  [disabled]="sending" class="form-control" type="text" placeholder="type a message" [(ngModel)]="message"> 
+          </div>
+          <div class="col form">
+            <button [disabled]="sending" class="btn btn-success btn-cl" (click)="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>

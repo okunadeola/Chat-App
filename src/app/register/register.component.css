@@ -1,0 +1,47 @@
+.row__container{
+  border-radius: 10px;
+  min-height: 80vh;
+}
+.register__col{
+  background-color: #E7E3E3;
+  border-radius: 10px 0 0 10px;
+  padding:20px 10px 0 10px ;
+  position: relative;
+}
+
+.pic__col{
+  background-color: #48D1FB; 
+  border-radius: 0px 10px 10px 0px;
+  position: relative;
+ 
+}
+.laptop{
+  object-fit: contain;
+  margin-top: 8rem;
+  max-width: 70%; 
+}
+.position{
+  position: absolute;
+}
+
+.chat{
+  position: absolute;
+  left: 98px;
+  width: 22rem;
+  height: 13.4rem;
+  top: 100px;
+  border-radius: 4px 4px 2px 2px;
+}
+.sign{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign__up{
+  position: absolute;
+}
+.min{
+  float:left;
+  margin-bottom:3px
+}
+   

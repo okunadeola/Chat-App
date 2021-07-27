@@ -1,0 +1,53 @@
+<div class="container py-3">
+ 
+  <div class="row mt-4 text-center row__container animate__animated animate__bounce">
+    <div class="col-12 col-md-6 mx-auto px-5 register__col animate__animated animate__swing animate__slow">
+      <div class="display-5 my-4">Register</div>
+      <div class="mx-auto w-100">
+        <div class="alert alert-danger animate__animated animate__swing animate__slow" *ngIf="error">
+          {{error}}
+          <div class="float-end alert-delete" (click)="removeAlert()"><i class="fa fa-times"></i></div>
+        </div>
+        <div class="alert alert-success " *ngIf="success">
+          {{success}}
+        </div>
+      </div>
+
+      <form (submit)="register()" [formGroup]="userForm">
+        <input formControlName="username" name="username"  class="form-control mt-2  my-3" type="text" maxlength="10" (blur)="usernameValidator()" placeholder="username" [(ngModel)]="username">
+        <div *ngIf="f.username.touched && f.username.invalid">
+          <small class="text-danger" *ngIf="f.username.errors?.required">this field is required</small>
+        </div>
+
+        <input formControlName="fullname" name="fullname"  class="form-control mt-2 my-3" type="text" maxlength="10" placeholder="fullname" [(ngModel)]="fullname">
+        <div *ngIf="f.fullname.touched && f.fullname.invalid">
+          <small class="text-danger" *ngIf="f.fullname.errors?.required">this field is required</small>
+        </div>
+
+        <input formControlName="email" name="email" type="email" class="form-control mt-2 my-3" placeholder="email" [(ngModel)]="email">
+        <div *ngIf="f.email.touched && f.email.invalid">
+          <small class="text-danger" *ngIf="f.email.errors?.required">this field is required</small>
+          <small class="text-danger" *ngIf="f.email.errors?.email">please enter a valid email</small>
+        </div>
+
+        <input formControlName="password" name="password" type="password" class="form-control mt-2 " placeholder="password" [(ngModel)]="password">
+        <div *ngIf="f.password.touched && f.password.invalid">
+          <small class="text-danger" *ngIf="f.password.errors?.required">this field is required</small>
+          <small class="text-danger" *ngIf="f.password.errors?.minlength">the minimum length for this field is {{userForm.get("password")?.errors?.minlength.requiredLength}} characters</small>
+        </div>
+
+        <div>
+          <button class="btn btn-success btn-block mt-3 my-5" type="submit" [disabled]="userForm.invalid">Register</button>
+        </div>
+      </form>
+      <div class="sign__up my-4">
+        <span class="text-muted">Already a User?</span> <a (click)="logUp()" class="text-primary sign mx-2">Sign in</a>
+      </div>
+    </div>
+    <div class="col-6 d-none d-md-block mx-auto pic__col animate__animated animate__swing animate__slower">
+     <div class="position animate__animated animate__bounce animate__slower">
+       <img src="/assets/img/lChat.png" class="laptop" alt="">
+     </div>
+    </div>
+  </div>
+</div>

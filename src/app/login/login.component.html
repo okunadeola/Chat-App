@@ -1,0 +1,29 @@
+<div class="container py-2">
+  
+  <div class="row mt-3 text-center row__container animate__animated animate__bounce">
+    <div class="col-6 mx-auto img__col d-none d-md-block">
+      <div class="pics__container animate__animated animate__bounce animate__slower">
+        <img src="/assets/img/pChat.png" class="pics" alt="chat img">
+      </div>
+    </div>
+    <div class="col-12 col-md-6 mx-auto py-5 px-5 login__col">  
+      <div class="mx-auto w-75">
+        <div class="alert alert-danger animate__animated animate__swing animate__slow" *ngIf="error">
+          {{error}}
+          <div class="float-end alert-delete" (click)="removeAlert()"><i class="fa fa-times"></i></div>
+        </div>
+        <div class="alert alert-success " *ngIf="success">
+          {{success}}
+        </div>
+      </div>
+      <div class="display-5 my-4">Login</div>
+      <div class="text-muted my-4  d-none d-md-block">Welcome! Login to start having a seamless chat with your love one</div>
+      <input type="text" class="form-control my-3 mt-2 mx-3" (blur)="btnLocker()" placeholder="username" [(ngModel)]="username">
+      <input type="password" class="form-control mt-2  my-3 mx-3" (blur)="btnLocker()" placeholder="password" [(ngModel)]="password">
+      <button class="btn btn-success btn-block mt-3" [disabled]="button" (click)="login()">Login</button>
+      <div class="sign__up my-4">
+        <span class="text-muted">New User?</span> <a (click)="signUp()" class="text-primary sign mx-2">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>

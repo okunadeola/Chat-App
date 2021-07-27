@@ -1,0 +1,54 @@
+.row__container{
+  border-radius: 10px;
+  min-height: 80vh;
+}
+.img__col{
+  background-color: #48D1FB;
+  border-radius: 10px 0 0 10px;
+  position: relative;
+  overflow: hidden;
+}
+.login__col{
+  background-color: #E7E3E3;
+  border-radius: 0px 10px 10px 0px;
+  padding:20px 10px 0 10px ;
+  position: relative;
+}
+.pics{
+  object-fit: contain;
+  max-width: 20rem;
+  max-height: 30rem;
+  position: absolute;
+  left: 20%;
+  margin-top: 10%;
+}
+.pics::before{
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  z-index: 4;
+}
+.pics__container{
+  position: relative;
+ 
+}
+
+.pics2{
+
+  width: 37vh;
+  height: 75vh;
+  position: absolute;
+  left: 177px;
+  top: 64px;
+  border-radius: 10px 10px 25px 25px;
+}
+
+.sign__up{
+position:absolute;
+}
+.sign{
+  font-weight: bolder;
+  text-decoration: none;
+  cursor: pointer;
+}

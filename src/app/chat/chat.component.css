@@ -1,0 +1,280 @@
+
+.flat{
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+
+}
+.flat::after{
+  content: "";
+  width: 100%;
+}
+.position{
+  position: absolute;
+  bottom: 0;
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+  max-height: 80.9vh;
+  overflow-y: auto;
+}
+.background{
+  position: relative;
+  background-image: url('/assets/img/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.user{
+  cursor: pointer;
+  border-bottom: 1px solid #081e64;
+  overflow-x: hidden;
+}
+
+.user:hover{
+  background-color: #b2b2b4 !important;
+  color: whitesmoke !important;
+  transition: all .5s ease-in-out;
+}
+
+a:active{
+  background-color: #b2b2b4 !important;
+  color: whitesmoke !important;
+  border-right: 3px solid #081e64 ;
+}
+
+.fa-user-circle{
+  font-size: 2rem;
+}
+.user__list .fa-user-circle{
+  font-size: 1.9rem;
+  color: #453280;
+}
+
+
+
+/* =========== container ================= */
+.container__fluid{
+  background: #e7ebf0;
+  width: 100vw;
+  height: 100vh;
+  padding: auto;
+  padding-top: 5px;
+}
+
+.container__fluid .chat__nav{
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #453280;
+  border-radius: 15px 15px 2px 2px;
+
+}
+
+
+.chat__container {
+  padding: 1rem;
+  display: flex;
+  width: 90vw;
+  height: 90vh;  
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: -5px;
+  background-color: #FBFCFF;
+}
+
+.chat__container .user__list{
+  flex-basis: 25vw;
+  background-color: white;
+  max-height: 90vh;
+  overflow-y: auto;
+  word-wrap: break-word;
+  border: 1px solid #200f52;
+  border-radius: 5px 5px 0 0 ;
+  padding: 2px;
+}
+.chat__container .chat__view{
+  flex-basis: 75vw;
+  background-color: rgb(231, 227, 227);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+.nav__height{
+  position: relative;
+}
+.one{
+  height: 40px;
+  margin-top: -5px;
+  border-left: 2px solid #ccc;
+}
+.form{
+  /* width: 50% !important; */
+  margin-left: -23px;
+}
+.max{
+  max-width: 60%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.btn-cl{
+  background-color: #453280;
+}
+
+.min__device{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #8f80be;
+  color: antiquewhite;
+  border-radius: 5px 5px 0 0; 
+}
+.min__device .fa-user-circle{
+  color: antiquewhite;
+  font-size: 2rem;
+}
+
+.fa-stream{
+  cursor: pointer;
+  visibility: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.fa-stream:hover{
+  color: #dd4bbd;
+}
+.fa-stream:active{
+  color: rgb(92, 186, 92);
+  transform: rotate(270deg);
+}
+.fa-stream:visited{
+  transform: rotate(270deg);
+}
+
+.logout{
+  position: absolute;
+  right: 30px;
+}
+.logout:hover{
+  background-color: #ccc;
+  color: #200f52;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.time{
+  font-size: .6rem;
+}
+
+.logout .logIconTwo{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:809px) {
+  .chat__container .user__list{
+    position: fixed;
+    z-index: 1000;
+    left: -120px;
+    max-height: 85vh;
+  }
+  .logout{
+    position: absolute;
+    right: 15px;
+    top: 7px;
+  }
+  .logout:hover{
+    background-color: #ccc;
+    color: #200f52;
+    border-radius: 4px;
+  }
+  .logout .logIcon{
+    display: none;
+  }
+  .logout .logIconTwo{
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+
+  #react{
+    left : 43px;
+    width: 50vh;
+    transition: all 1s ease-in-out;
+    opacity: 0.8;
+  }
+  #noReact{
+    left : -220px;
+    transition: all 1s ease-in-out;
+  }
+  .chat__container .chat__view{
+    flex-basis: 85vw;
+  }
+
+  .flex{
+    display: flex;
+    flex-direction: column;
+    max-height: 78.5vh;
+    overflow-y: auto;
+  }
+  .responsive{
+    display: none;
+  }
+
+  .one{
+    display:none
+  }
+
+  .fa-stream{
+    position: absolute;
+    right: 40px;
+    visibility: visible;
+  }
+
+  .relative{
+    position: relative;
+  }
+
+  .nav__height{
+    min-height: 50px;
+  }
+
+  .receiverAvarte{
+    margin-left: -35px;
+    width: fit-content;
+  }
+
+  .min__device{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8f80be;
+    color: antiquewhite;
+    border-radius: 5px 5px 0 0; 
+  }
+  .min__device .fa-user-circle{
+    color: antiquewhite;
+    font-size: 2rem;
+  }
+  .display{
+    display:none
+  }
+  
+}
